@@ -1,20 +1,29 @@
+greetUser();
+
+
+/// Function to greet the user by name
 function greetUser() {
-    let userName  = prompt("Please enter your name:");
+    /// Prompt the user to enter their name
+    let userName = prompt("Enter your name:");
+
+    /// Display a welcome message with the user's name
     document.getElementById("welcome-speech").innerHTML = userName;
 }
 
+
+/// Function to validate the contact form
 function validateForm() {
-    /// Initialize variables to store form data
+    /// Initialize variables to store form input values
     let name = document.getElementById("name-input").value;
     let email = document.getElementById("email-input").value;
     let message = document.getElementById("message-input").value;
 
-    // check if any field is empty
+    /// Check if any field is empty and alert the user
     if (name === "" || email === "" || message === "") {
-        /// if any field is empty, show an alert
-        alert("All fields must be filled out")
+        /// If any field is empty, alert the user
+        alert("Please fill in all fields.");
     } else {
-        /// if all fields are filled, show a thank you message
+        /// If all fields are filled, thank the user
         alert("Thank you for your message, " + name + "!");
     }
 }

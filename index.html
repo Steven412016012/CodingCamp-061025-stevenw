@@ -1,46 +1,85 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Portofolio</title>
+    <title>Steven Portfolio</title>
 
-    <!---CSS External-->
+    <!-- CSS External -->
     <link rel="stylesheet" href="css/style.css">
 
-    <!--Tailwind CDN-->  
+    <!-- Tailwind CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-    <!---header section-->
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Your Logo</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Our Profile</a></li>
-                <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Message Us</a></li>
-            </ul>
-        </nav>
 
+<body>
+    <!-- Header Content -->
+    <header class="main-header m-[8px]">
+
+        <!-- Logo Icon -->
+        <div class="logo-icon"></div>
+
+        <nav class="flex items-center">
+            <a class="border rounded p-[8px]" href="#home">Home</a>
+            <a class="border rounded p-[8px]" href="#our-profile">Our Profile</a>
+            <a class="border rounded p-[8px]" href="#portfolio">Portfolio</a>
+            <a class="border rounded p-[8px]" href="#message-us">Message Us</a>
+        </nav>
     </header>
 
-    <!---content section-->
+    <hr />
+
+    <!-- Content Section -->
     <main>
-        <section id="home">
-            <h2>Welcome to My Portfolio</h2>
-            <p>This is a brief introduction about myself and my work.</p>
+        <section id="home" class="main-content min-h-[500px] m-[8px]">
+            <h1 class="text-3xl font-bold mb-[16px]">Hi <span id="welcome-speech"></span>, Welcome to Steven Portfolio
+            </h1>
+            <p class="mb-[16px]">This is a simple portfolio website built using HTML, CSS, and Tailwind CSS.</p>
+        </section>
+
+        <hr />
+
+        <section id="our-profile" class="additional-content min-h-[500px] m-[8px]">
+            <h2 class="text-2xl font-bold mb-[16px]">Our Profile</h2>
+            <p class="mb-[16px]">I am a web developer with a passion for creating beautiful and functional websites.</p>
+
+        </section>
+
+        <hr />
+
+        <section id="portfolio" class="additional-content min-h-[500px] m-[8px]">
+            <h2 class="text-2xl font-bold mb-[16px]">Portfolio</h2>
+            <p class="mb-[16px]">I am a web developer with a passion for creating beautiful and functional websites.</p>
+
+        </section>
+
+        <hr />
+
+        <section id="message-us" class="contact-content min-h-[500px] m-[8px]">
+            <h2 class="text-2xl font-bold mb-[16px]">Message Us</h2>
+
+            <form>
+                <input class="border p-[8px] mb-[16px] w-full" type="text" id="name-input" placeholder="Your Name" />
+                <input class="border p-[8px] mb-[16px] w-full" type="email" id="email-input" placeholder="Your Email" />
+                <textarea class="border p-[8px] mb-[16px] w-full" rows="4" id="message-input"
+                    placeholder="Your Message"></textarea>
+            </form>
+
+            <button onclick="validateForm()" class="bg-red-500 text-white px-[16px] py-[8px] rounded">Message
+                Now</button>
         </section>
     </main>
 
-    <!---footer section-->
+    <!-- Footer Content -->
     <footer>
-        
+        <div class="footer-content text-center p-[16px] bg-gray-200">
+            &copy; 2025 Yama Portfolio. All rights reserved.
+        </div>
     </footer>
 
-    <!---javascript section-->
+    <!-- Javascript External -->
     <script src="js/script.js"></script>
 </body>
+
 </html>
