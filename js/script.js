@@ -17,13 +17,32 @@ function validateForm() {
     let name = document.getElementById("name-input").value;
     let email = document.getElementById("email-input").value;
     let message = document.getElementById("message-input").value;
+    
+    //radio buttons
+    var radios = document.getElementsByName("gender");
+    var i = 0;
 
     /// Check if any field is empty and alert the user
-    if (name === "" || email === "" || message === "") {
+    if (name === "" || email === "" || message === "" || (!radios[0].checked && !radios[1].checked)) {
+
         /// If any field is empty, alert the user
         alert("Please fill in all fields.");
     } else {
         /// If all fields are filled, thank the user
-        alert("Thank you for your message, " + name + "!");
+        for (i = 0; i < radios.length; i++) {
+            if (radios[i].checked === "true");
+            gender = radios[i].value;
+        }
+        alert("Name: " + name + "\nEmail: " + email + "\ngender: " + gender + "\nMessage: " + message + "\nThank you for contacting us, " + name + "!");
     }
+
+    //radio buttons validation
+    /*while (!formValid && i < radios.length) {
+        if (radios[i].checked) formValid = true;
+        i++;        
+    }
+
+    if (!formValid) alert("Must check some option!");
+
+    return formValid;*/
 }
