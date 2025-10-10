@@ -1,85 +1,479 @@
 <!DOCTYPE html>
 <html lang="en">
+<div class="bg-gray-900">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Steven Portfolio</title>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Steven Portfolio</title>
+        <!-- CSS External -->
+        <link rel="stylesheet" href="css/style.css">
 
-    <!-- CSS External -->
-    <link rel="stylesheet" href="css/style.css">
+        <!-- Tailwind CDN -->
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    </head>
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
+    <body>
+        <!-- Header Content -->
+        <header class="absolute inset-x-0 top-0 z-50">
+            <!--NavBar-->
+                <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8">
+                    <!--Logo-->
+                    <div class="flex lg:flex-1">
+                        <a href="#home" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Steven Portfolio</span>
+                        <!--<img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="" class="h-8 w-auto" />-->
+                        <div class="logo-icon"  alt="" class="h-8 w-auto" ></div>
+                        </a>
+                    </div>
 
-<body>
-    <!-- Header Content -->
-    <header class="main-header m-[8px]">
 
-        <!-- Logo Icon -->
-        <div class="logo-icon"></div>
+                    <div class="flex lg:hidden">
+                        <button type="button" command="show-modal" commandfor="mobile-menu" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200">
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        </button>
+                    </div>
 
-        <nav class="flex items-center">
-            <a class="border rounded p-[8px]" href="#home">Home</a>
-            <a class="border rounded p-[8px]" href="#our-profile">Our Profile</a>
-            <a class="border rounded p-[8px]" href="#portfolio">Portfolio</a>
-            <a class="border rounded p-[8px]" href="#message-us">Message Us</a>
-        </nav>
-    </header>
+                    <!--Navbar Menu-->
+                    <div class="hidden lg:flex lg:gap-x-12">
+                        <a href="#home" class="text-sm/6 font-semibold text-white">Home</a>
+                        <a href="#our-profile" class="text-sm/6 font-semibold text-white">Our Profile</a>
+                        <a href="#portfolio" class="text-sm/6 font-semibold text-white">Portfolio</a>
+                        <a href="#message-us" class="text-sm/6 font-semibold text-white">Message Us</a>
+                    </div>
 
-    <hr />
+                    <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+                        <!--<a href="#" class="text-sm/6 font-semibold text-white">Log in <span aria-hidden="true">&rarr;</span></a>-->
+                    </div>
+                </nav>
+            <!---->
 
-    <!-- Content Section -->
-    <main>
+            
+            <el-dialog>
+            <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+                <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                <el-dialog-panel class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-gray-900 p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+                    <div class="flex items-center justify-between">
+                    <a href="#" class="-m-1.5 p-1.5">
+                        <span class="sr-only">Steven Portfolio</span>
+                        <!--<img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="" class="h-8 w-auto" />-->
+                        <div class="logo-icon"  alt="" class="h-8 w-auto" ></div>
+                    </a>
+                    <button type="button" command="close" commandfor="mobile-menu" class="-m-2.5 rounded-md p-2.5 text-gray-200">
+                        <span class="sr-only">Close menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6">
+                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    </div>
+                    <div class="mt-6 flow-root">
+                    <div class="-my-6 divide-y divide-white/10">
+                        <!--el dialog menu version-->
+                        <div class="space-y-2 py-6">
+                            <a href="#home" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Home</a>
+                            <a href="#our-profile" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Our Profile</a>
+                            <a href="#portfolio" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Portofolio</a>
+                            <a href="#message-us" class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-white/5">Meesage Us</a>
+                        </div>
+                        <!---->
+                    </div>
+                    </div>
+                </el-dialog-panel>
+                </div>
+            </dialog>
+            </el-dialog>
+        </header>
+
+        <hr />
+
+        <!-- Content Section 1 -->
         <section id="home" class="main-content min-h-[500px] m-[8px]">
-            <h1 class="text-3xl font-bold mb-[16px]">Hi <span id="welcome-speech"></span>, Welcome to Steven Portfolio
-            </h1>
-            <p class="mb-[16px]">This is a simple portfolio website built using HTML, CSS, and Tailwind CSS.</p>
+            <div class="relative isolate px-6 pt-14 lg:px-8">
+                <div aria-hidden="true" class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80">
+                <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%-11rem)] aspect-1155/678 w-144.5 -translate-x-1/2 rotate-30 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-288.75"></div>
+                </div>
+                <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                
+                    <!--<div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                    <div class="relative rounded-full px-3 py-1 text-sm/6 text-gray-400 ring-1 ring-white/10 hover:ring-white/20">
+                    Announcing our next round of funding. <a href="#" class="font-semibold text-indigo-400"><span aria-hidden="true" class="absolute inset-0"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>-->
+
+                <div class="text-center">
+                    <h1 class="text-5xl font-semibold tracking-tight text-balance text-white sm:text-7xl">Hi <span id="welcome-speech"></span>, Welcome to Steven Portfolio</h1>
+                    <p class="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8">This is a simple portfolio website built using HTML, CSS, and Tailwind CSS.</p>
+                    <!--<div class="mt-10 flex items-center justify-center gap-x-6">
+                    <a href="#" class="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Get started</a>
+                    <a href="#" class="text-sm/6 font-semibold text-white">Learn more <span aria-hidden="true">→</span></a>
+                    </div>-->
+                </div>
+                </div>
+                <div aria-hidden="true" class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]">
+                <div style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)" class="relative left-[calc(50%+3rem)] aspect-1155/678 w-144.5 -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-288.75"></div>
+                </div>
+            </div>
         </section>
+        <!---->
 
-        <hr />
 
+        <!--Content Section II -->
         <section id="our-profile" class="additional-content min-h-[500px] m-[8px]">
-            <h2 class="text-2xl font-bold mb-[16px]">Our Profile</h2>
-            <p class="mb-[16px]">I am a web developer with a passion for creating beautiful and functional websites.</p>
+            <div class="bg-gray-900 py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto max-w-2xl lg:text-center">
+                    <!--<h2 class="text-base/7 font-semibold text-indigo-400">Deploy faster</h2>-->
+                    <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl lg:text-balance">Our Profile</p>
+                    <p class="mt-6 text-lg/8 text-gray-300">I am a web developer with a passion for creating beautiful and functional websites</p>
+                </div>
 
+                <!--<div class="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+                <dl class="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+                    <div class="relative pl-16">
+                    <dt class="text-base/7 font-semibold text-white">
+                        <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-500">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+                            <path d="M12 16.5V9.75m0 0 3 3m-3-3-3 3M6.75 19.5a4.5 4.5 0 0 1-1.41-8.775 5.25 5.25 0 0 1 10.233-2.33 3 3 0 0 1 3.758 3.848A3.752 3.752 0 0 1 18 19.5H6.75Z" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        </div>
+                        Push to deploy
+                    </dt>
+                    <dd class="mt-2 text-base/7 text-gray-400">Morbi viverra dui mi arcu sed. Tellus semper adipiscing suspendisse semper morbi. Odio urna massa nunc massa.</dd>
+                    </div>
+                    <div class="relative pl-16">
+                    <dt class="text-base/7 font-semibold text-white">
+                        <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-500">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+                            <path d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        </div>
+                        SSL certificates
+                    </dt>
+                    <dd class="mt-2 text-base/7 text-gray-400">Sit quis amet rutrum tellus ullamcorper ultricies libero dolor eget. Sem sodales gravida quam turpis enim lacus amet.</dd>
+                    </div>
+                    <div class="relative pl-16">
+                    <dt class="text-base/7 font-semibold text-white">
+                        <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-500">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+                            <path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        </div>
+                        Simple queues
+                    </dt>
+                    <dd class="mt-2 text-base/7 text-gray-400">Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.</dd>
+                    </div>
+                    <div class="relative pl-16">
+                    <dt class="text-base/7 font-semibold text-white">
+                        <div class="absolute top-0 left-0 flex size-10 items-center justify-center rounded-lg bg-indigo-500">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon" aria-hidden="true" class="size-6 text-white">
+                            <path d="M7.864 4.243A7.5 7.5 0 0 1 19.5 10.5c0 2.92-.556 5.709-1.568 8.268M5.742 6.364A7.465 7.465 0 0 0 4.5 10.5a7.464 7.464 0 0 1-1.15 3.993m1.989 3.559A11.209 11.209 0 0 0 8.25 10.5a3.75 3.75 0 1 1 7.5 0c0 .527-.021 1.049-.064 1.565M12 10.5a14.94 14.94 0 0 1-3.6 9.75m6.633-4.596a18.666 18.666 0 0 1-2.485 5.33" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                        </div>
+                        Advanced security
+                    </dt>
+                    <dd class="mt-2 text-base/7 text-gray-400">Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.</dd>
+                    </div>
+                </dl>
+                </div>-->
+            </div>
+            </div>
         </section>
+        <!---->
 
-        <hr />
-
+        <!--Content Section III -->
         <section id="portfolio" class="additional-content min-h-[500px] m-[8px]">
-            <h2 class="text-2xl font-bold mb-[16px]">Portfolio</h2>
-            <p class="mb-[16px]">I am a web developer with a passion for creating beautiful and functional websites.</p>
-
+            <div class="overflow-hidden bg-gray-900 py-24 sm:py-32">
+            <div class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
+                <div class="lg:pt-4 lg:pr-8">
+                    <div class="lg:max-w-lg">
+                    <!--<h2 class="text-base/7 font-semibold text-indigo-400">Deploy faster</h2>-->
+                    <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Portfolio</p>
+                    <p class="mt-6 text-lg/8 text-gray-300">I am a web developer with a passion for creating beautiful and functional websites.</p>
+                    <dl class="mt-10 max-w-xl space-y-8 text-base/7 text-gray-400 lg:max-w-none">
+                        <div class="relative pl-9">
+                        <dt class="inline font-semibold text-white">
+                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="absolute top-1 left-1 size-5 text-indigo-400">
+                            <path d="M5.5 17a4.5 4.5 0 0 1-1.44-8.765 4.5 4.5 0 0 1 8.302-3.046 3.5 3.5 0 0 1 4.504 4.272A4 4 0 0 1 15 17H5.5Zm3.75-2.75a.75.75 0 0 0 1.5 0V9.66l1.95 2.1a.75.75 0 1 0 1.1-1.02l-3.25-3.5a.75.75 0 0 0-1.1 0l-3.25 3.5a.75.75 0 1 0 1.1 1.02l1.95-2.1v4.59Z" clip-rule="evenodd" fill-rule="evenodd" />
+                            </svg>
+                            Push to deploy.
+                        </dt>
+                        <dd class="inline">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.</dd>
+                        </div>
+                        <div class="relative pl-9">
+                        <dt class="inline font-semibold text-white">
+                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="absolute top-1 left-1 size-5 text-indigo-400">
+                            <path d="M10 1a4.5 4.5 0 0 0-4.5 4.5V9H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-.5V5.5A4.5 4.5 0 0 0 10 1Zm3 8V5.5a3 3 0 1 0-6 0V9h6Z" clip-rule="evenodd" fill-rule="evenodd" />
+                            </svg>
+                            SSL certificates.
+                        </dt>
+                        <dd class="inline">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.</dd>
+                        </div>
+                        <div class="relative pl-9">
+                        <dt class="inline font-semibold text-white">
+                            <svg viewBox="0 0 20 20" fill="currentColor" data-slot="icon" aria-hidden="true" class="absolute top-1 left-1 size-5 text-indigo-400">
+                            <path d="M4.632 3.533A2 2 0 0 1 6.577 2h6.846a2 2 0 0 1 1.945 1.533l1.976 8.234A3.489 3.489 0 0 0 16 11.5H4c-.476 0-.93.095-1.344.267l1.976-8.234Z" />
+                            <path d="M4 13a2 2 0 1 0 0 4h12a2 2 0 1 0 0-4H4Zm11.24 2a.75.75 0 0 1 .75-.75H16a.75.75 0 0 1 .75.75v.01a.75.75 0 0 1-.75.75h-.01a.75.75 0 0 1-.75-.75V15Zm-2.25-.75a.75.75 0 0 0-.75.75v.01c0 .414.336.75.75.75H13a.75.75 0 0 0 .75-.75V15a.75.75 0 0 0-.75-.75h-.01Z" clip-rule="evenodd" fill-rule="evenodd" />
+                            </svg>
+                            Database backups.
+                        </dt>
+                        <dd class="inline">Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.</dd>
+                        </div>
+                    </dl>
+                    </div>
+                </div>
+                <img width="2432" height="1442" src="https://tailwindcss.com/plus-assets/img/component-images/dark-project-app-screenshot.png" alt="Product screenshot" class="w-3xl max-w-none rounded-xl shadow-xl ring-1 ring-white/10 sm:w-228 md:-ml-4 lg:-ml-0" />
+                </div>
+            </div>
+            </div>
         </section>
 
-        <hr />
+        <!---->
 
-        <section id="message-us" class="contact-content min-h-[500px] m-[8px]">
-            <h2 class="text-2xl font-bold mb-[16px]">Message Us</h2>
+        <!--Content Section IV -->
+        <section id="message-us" class="contact-content min-h-[500px] m-[8px] overflow-hidden bg-gray-900 py-24 sm:py-32">
+            <form class="mx-auto max-w-7xl px-6 lg:px-8">
+                <div class="space-y-12">
+                    <div class="border-b border-white/10 pb-12">
+                        <p class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-white sm:text-5xl">Message Us</p>
 
-            <form>
-                <input class="border p-[8px] mb-[16px] w-full" type="text" id="name-input" placeholder="Your Name" />
-                <input class="border p-[8px] mb-[16px] w-full" type="email" id="email-input" placeholder="Your Email" />
-                <textarea class="border p-[8px] mb-[16px] w-full" rows="4" id="message-input"
-                    placeholder="Your Message"></textarea>
+                        <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                            <!--Name-->
+                            <div class="sm:col-span-3">
+                            <label for="name-input" class="block text-sm/6 font-medium text-white">Your Name</label>
+                            <div class="mt-2">
+                                <input id="name-input" type="text" name="name-input" autocomplete="given-name" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+                            </div>
+                            </div>
+                            <!---->
+
+                            <!-- Email -->
+                            <div class="sm:col-span-4">
+                            <label for="email-input" class="block text-sm/6 font-medium text-white">Email</label>
+                            <div class="mt-2">
+                                <div class="flex items-center rounded-md bg-white/5 pl-3 outline-1 -outline-offset-1 outline-white/10 focus-within:outline-2 focus-within:-outline-offset-2 focus-within:outline-indigo-500">
+                                <!--<div class="shrink-0 text-base text-gray-400 select-none sm:text-sm/6">workcation.com/</div>-->
+                                <input id="email-input" type="email" name="email-input" placeholder="janesmith" class="block min-w-0 grow bg-transparent py-1.5 pr-3 pl-1 text-base text-white placeholder:text-gray-500 focus:outline-none sm:text-sm/6" />
+                                </div>
+                            </div>
+                            </div>
+                            <!---->
+
+                            <!--Message Input-->
+                            <div class="col-span-full">
+                            <label for="message-input" class="block text-sm/6 font-medium text-white">Message Input</label>
+                            <div class="mt-2">
+                                <textarea id="message-input" name="message-input" rows="3" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6"></textarea>
+                            </div>
+                            <p class="mt-3 text-sm/6 text-gray-400">Write a few sentences about yourself.</p>
+                            </div>
+                            <!---->
+
+                            <!--<div class="col-span-full">
+                            <label for="photo" class="block text-sm/6 font-medium text-white">Photo</label>
+                            <div class="mt-2 flex items-center gap-x-3">
+                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true" class="size-12 text-gray-500">
+                                <path d="M18.685 19.097A9.723 9.723 0 0 0 21.75 12c0-5.385-4.365-9.75-9.75-9.75S2.25 6.615 2.25 12a9.723 9.723 0 0 0 3.065 7.097A9.716 9.716 0 0 0 12 21.75a9.716 9.716 0 0 0 6.685-2.653Zm-12.54-1.285A7.486 7.486 0 0 1 12 15a7.486 7.486 0 0 1 5.855 2.812A8.224 8.224 0 0 1 12 20.25a8.224 8.224 0 0 1-5.855-2.438ZM15.75 9a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                </svg>
+                                <button type="button" class="rounded-md bg-white/10 px-3 py-2 text-sm font-semibold text-white inset-ring inset-ring-white/5 hover:bg-white/20">Change</button>
+                            </div>
+                            </div>
+
+                            <div class="col-span-full">
+                            <label for="cover-photo" class="block text-sm/6 font-medium text-white">Cover photo</label>
+                            <div class="mt-2 flex justify-center rounded-lg border border-dashed border-white/25 px-6 py-10">
+                                <div class="text-center">
+                                <svg viewBox="0 0 24 24" fill="currentColor" data-slot="icon" aria-hidden="true" class="mx-auto size-12 text-gray-600">
+                                    <path d="M1.5 6a2.25 2.25 0 0 1 2.25-2.25h16.5A2.25 2.25 0 0 1 22.5 6v12a2.25 2.25 0 0 1-2.25 2.25H3.75A2.25 2.25 0 0 1 1.5 18V6ZM3 16.06V18c0 .414.336.75.75.75h16.5A.75.75 0 0 0 21 18v-1.94l-2.69-2.689a1.5 1.5 0 0 0-2.12 0l-.88.879.97.97a.75.75 0 1 1-1.06 1.06l-5.16-5.159a1.5 1.5 0 0 0-2.12 0L3 16.061Zm10.125-7.81a1.125 1.125 0 1 1 2.25 0 1.125 1.125 0 0 1-2.25 0Z" clip-rule="evenodd" fill-rule="evenodd" />
+                                </svg>
+                                <div class="mt-4 flex text-sm/6 text-gray-400">
+                                    <label for="file-upload" class="relative cursor-pointer rounded-md bg-transparent font-semibold text-indigo-400 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-indigo-500 hover:text-indigo-300">
+                                    <span>Upload a file</span>
+                                    <input id="file-upload" type="file" name="file-upload" class="sr-only" />
+                                    </label>
+                                    <p class="pl-1">or drag and drop</p>
+                                </div>
+                                <p class="text-xs/5 text-gray-400">PNG, JPG, GIF up to 10MB</p>
+                                </div>
+                            </div>
+                            </div>-->
+                        </div>
+                    </div>
+
+                    <!--<div class="border-b border-white/10 pb-12">
+                    <h2 class="text-base/7 font-semibold text-white">Personal Information</h2>
+                    <p class="mt-1 text-sm/6 text-gray-400">Use a permanent address where you can receive mail.</p>
+
+                    <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                        <div class="sm:col-span-3">
+                        <label for="first-name" class="block text-sm/6 font-medium text-white">First name</label>
+                        <div class="mt-2">
+                            <input id="first-name" type="text" name="first-name" autocomplete="given-name" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+                        </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                        <label for="last-name" class="block text-sm/6 font-medium text-white">Last name</label>
+                        <div class="mt-2">
+                            <input id="last-name" type="text" name="last-name" autocomplete="family-name" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+                        </div>
+                        </div>
+
+                        <div class="sm:col-span-4">
+                        <label for="email" class="block text-sm/6 font-medium text-white">Email address</label>
+                        <div class="mt-2">
+                            <input id="email" type="email" name="email" autocomplete="email" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+                        </div>
+                        </div>
+
+                        <div class="sm:col-span-3">
+                        <label for="country" class="block text-sm/6 font-medium text-white">Country</label>
+                        <div class="mt-2 grid grid-cols-1">
+                            <select id="country" name="country" autocomplete="country-name" class="col-start-1 row-start-1 w-full appearance-none rounded-md bg-white/5 py-1.5 pr-8 pl-3 text-base text-white outline-1 -outline-offset-1 outline-white/10 *:bg-gray-800 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6">
+                            <option>United States</option>
+                            <option>Canada</option>
+                            <option>Mexico</option>
+                            </select>
+                            <svg viewBox="0 0 16 16" fill="currentColor" data-slot="icon" aria-hidden="true" class="pointer-events-none col-start-1 row-start-1 mr-2 size-5 self-center justify-self-end text-gray-400 sm:size-4">
+                            <path d="M4.22 6.22a.75.75 0 0 1 1.06 0L8 8.94l2.72-2.72a.75.75 0 1 1 1.06 1.06l-3.25 3.25a.75.75 0 0 1-1.06 0L4.22 7.28a.75.75 0 0 1 0-1.06Z" clip-rule="evenodd" fill-rule="evenodd" />
+                            </svg>
+                        </div>
+                        </div>
+
+                        <div class="col-span-full">
+                        <label for="street-address" class="block text-sm/6 font-medium text-white">Street address</label>
+                        <div class="mt-2">
+                            <input id="street-address" type="text" name="street-address" autocomplete="street-address" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+                        </div>
+                        </div>
+
+                        <div class="sm:col-span-2 sm:col-start-1">
+                        <label for="city" class="block text-sm/6 font-medium text-white">City</label>
+                        <div class="mt-2">
+                            <input id="city" type="text" name="city" autocomplete="address-level2" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+                        </div>
+                        </div>
+
+                        <div class="sm:col-span-2">
+                        <label for="region" class="block text-sm/6 font-medium text-white">State / Province</label>
+                        <div class="mt-2">
+                            <input id="region" type="text" name="region" autocomplete="address-level1" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+                        </div>
+                        </div>
+
+                        <div class="sm:col-span-2">
+                        <label for="postal-code" class="block text-sm/6 font-medium text-white">ZIP / Postal code</label>
+                        <div class="mt-2">
+                            <input id="postal-code" type="text" name="postal-code" autocomplete="postal-code" class="block w-full rounded-md bg-white/5 px-3 py-1.5 text-base text-white outline-1 -outline-offset-1 outline-white/10 placeholder:text-gray-500 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-500 sm:text-sm/6" />
+                        </div>
+                        </div>
+                    </div>
+                    </div>
+
+                    <div class="border-b border-white/10 pb-12">
+                    <h2 class="text-base/7 font-semibold text-white">Notifications</h2>
+                    <p class="mt-1 text-sm/6 text-gray-400">We'll always let you know about important changes, but you pick what else you want to hear about.</p>
+
+                    <div class="mt-10 space-y-10">
+                        <fieldset>
+                        <legend class="text-sm/6 font-semibold text-white">By email</legend>
+                        <div class="mt-6 space-y-6">
+                            <div class="flex gap-3">
+                            <div class="flex h-6 shrink-0 items-center">
+                                <div class="group grid size-4 grid-cols-1">
+                                <input id="comments" type="checkbox" name="comments" checked aria-describedby="comments-description" class="col-start-1 row-start-1 appearance-none rounded-sm border border-white/10 bg-white/5 checked:border-indigo-500 checked:bg-indigo-500 indeterminate:border-indigo-500 indeterminate:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 disabled:border-white/5 disabled:bg-white/10 disabled:checked:bg-white/10 forced-colors:appearance-auto" />
+                                <svg viewBox="0 0 14 14" fill="none" class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-white/25">
+                                    <path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-checked:opacity-100" />
+                                    <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-indeterminate:opacity-100" />
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="text-sm/6">
+                                <label for="comments" class="font-medium text-white">Comments</label>
+                                <p id="comments-description" class="text-gray-400">Get notified when someones posts a comment on a posting.</p>
+                            </div>
+                            </div>
+                            <div class="flex gap-3">
+                            <div class="flex h-6 shrink-0 items-center">
+                                <div class="group grid size-4 grid-cols-1">
+                                <input id="candidates" type="checkbox" name="candidates" aria-describedby="candidates-description" class="col-start-1 row-start-1 appearance-none rounded-sm border border-white/10 bg-white/5 checked:border-indigo-500 checked:bg-indigo-500 indeterminate:border-indigo-500 indeterminate:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 disabled:border-white/5 disabled:bg-white/10 disabled:checked:bg-white/10 forced-colors:appearance-auto" />
+                                <svg viewBox="0 0 14 14" fill="none" class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-white/25">
+                                    <path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-checked:opacity-100" />
+                                    <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-indeterminate:opacity-100" />
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="text-sm/6">
+                                <label for="candidates" class="font-medium text-white">Candidates</label>
+                                <p id="candidates-description" class="text-gray-400">Get notified when a candidate applies for a job.</p>
+                            </div>
+                            </div>
+                            <div class="flex gap-3">
+                            <div class="flex h-6 shrink-0 items-center">
+                                <div class="group grid size-4 grid-cols-1">
+                                <input id="offers" type="checkbox" name="offers" aria-describedby="offers-description" class="col-start-1 row-start-1 appearance-none rounded-sm border border-white/10 bg-white/5 checked:border-indigo-500 checked:bg-indigo-500 indeterminate:border-indigo-500 indeterminate:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 disabled:border-white/5 disabled:bg-white/10 disabled:checked:bg-white/10 forced-colors:appearance-auto" />
+                                <svg viewBox="0 0 14 14" fill="none" class="pointer-events-none col-start-1 row-start-1 size-3.5 self-center justify-self-center stroke-white group-has-disabled:stroke-white/25">
+                                    <path d="M3 8L6 11L11 3.5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-checked:opacity-100" />
+                                    <path d="M3 7H11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-0 group-has-indeterminate:opacity-100" />
+                                </svg>
+                                </div>
+                            </div>
+                            <div class="text-sm/6">
+                                <label for="offers" class="font-medium text-white">Offers</label>
+                                <p id="offers-description" class="text-gray-400">Get notified when a candidate accepts or rejects an offer.</p>
+                            </div>
+                            </div>
+                        </div>
+                        </fieldset>
+
+                        <fieldset>
+                        <legend class="text-sm/6 font-semibold text-white">Push notifications</legend>
+                        <p class="mt-1 text-sm/6 text-gray-400">These are delivered via SMS to your mobile phone.</p>
+                        <div class="mt-6 space-y-6">
+                            <div class="flex items-center gap-x-3">
+                            <input id="push-everything" type="radio" name="push-notifications" checked class="relative size-4 appearance-none rounded-full border border-white/10 bg-white/5 before:absolute before:inset-1 before:rounded-full before:bg-white not-checked:before:hidden checked:border-indigo-500 checked:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 disabled:border-white/5 disabled:bg-white/10 disabled:before:bg-white/20 forced-colors:appearance-auto forced-colors:before:hidden" />
+                            <label for="push-everything" class="block text-sm/6 font-medium text-white">Everything</label>
+                            </div>
+                            <div class="flex items-center gap-x-3">
+                            <input id="push-email" type="radio" name="push-notifications" class="relative size-4 appearance-none rounded-full border border-white/10 bg-white/5 before:absolute before:inset-1 before:rounded-full before:bg-white not-checked:before:hidden checked:border-indigo-500 checked:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 disabled:border-white/5 disabled:bg-white/10 disabled:before:bg-white/20 forced-colors:appearance-auto forced-colors:before:hidden" />
+                            <label for="push-email" class="block text-sm/6 font-medium text-white">Same as email</label>
+                            </div>
+                            <div class="flex items-center gap-x-3">
+                            <input id="push-nothing" type="radio" name="push-notifications" class="relative size-4 appearance-none rounded-full border border-white/10 bg-white/5 before:absolute before:inset-1 before:rounded-full before:bg-white not-checked:before:hidden checked:border-indigo-500 checked:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500 disabled:border-white/5 disabled:bg-white/10 disabled:before:bg-white/20 forced-colors:appearance-auto forced-colors:before:hidden" />
+                            <label for="push-nothing" class="block text-sm/6 font-medium text-white">No push notifications</label>
+                            </div>
+                        </div>
+                        </fieldset>
+                    </div>
+                    </div>-->
+
+                    <!--Button-->
+                    <div class="mt-6 flex items-center justify-end gap-x-6">
+                        <!--<button type="button" class="text-sm/6 font-semibold text-white">Cancel</button>
+                        <button type="submit" class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Save</button>-->
+                        <button onclick="validateForm()" class="rounded-md bg-indigo-500 px-3 py-2 text-sm font-semibold text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500">Message Now</button>
+                    </div>
+                    <!----->
+                </div>
             </form>
 
-            <button onclick="validateForm()" class="bg-red-500 text-white px-[16px] py-[8px] rounded">Message
-                Now</button>
         </section>
-    </main>
+        <!---->
 
-    <!-- Footer Content -->
-    <footer>
-        <div class="footer-content text-center p-[16px] bg-gray-200">
-            &copy; 2025 Steven Portfolio. All rights reserved.
-        </div>
-    </footer>
+        <!-- Footer Content -->
+        <footer>
+            <div class="footer-content text-center p-[16px] bg-gray-200">
+                &copy; 2025 Steven Portfolio. All rights reserved.
+            </div>
+        </footer>
 
-    <!-- Javascript External -->
-    <script src="js/script.js"></script>
-</body>
+        <!-- Javascript External -->
+        <script src="js/script.js"></script>
+    </body>
+
+</div>
 
 </html>
