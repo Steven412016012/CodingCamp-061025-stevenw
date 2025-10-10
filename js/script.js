@@ -20,7 +20,7 @@ function validateForm() {
     
     //radio buttons
     var radios = document.getElementsByName("gender");
-    var i = 0;
+    var i = '';
 
     /// Check if any field is empty and alert the user
     if (name === "" || email === "" || message === "" || (!radios[0].checked && !radios[1].checked)) {
@@ -30,10 +30,10 @@ function validateForm() {
     } else {
         /// If all fields are filled, thank the user
         for (i = 0; i < radios.length; i++) {
-            if (radios[i].checked === "true");
+            if (radios[i].checked === "true")
             gender = radios[i].value;
         }
-        alert("Name: " + name + "\nEmail: " + email + "\ngender: " + gender + "\nMessage: " + message + "\nThank you for contacting us, " + name + "!");
+        alert("Name: " + name + "\nEmail: " + email + "\nMessage: " + message + "\nThank you for contacting us, " + name + "!");
     }
 
     //radio buttons validation
